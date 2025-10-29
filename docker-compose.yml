@@ -24,7 +24,7 @@ services:
     image: postgres
     container_name: postgres_db
     environment:
-      POSTGRES_USER: Edboi
+      POSTGRES_USER: edboi
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: fastapi_db
     ports:
