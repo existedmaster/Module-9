@@ -40,7 +40,10 @@ jobs:
           python -m venv venv
           source venv/bin/activate
           pip install -r requirements.txt
-          playwright install
+          # Add retry mechanism for Playwright installation
+          for i in {1..3}; do
+            playwright install && break || sleep 10
+          done
       - name: Run tests
         run: |
           source venv/bin/activate
