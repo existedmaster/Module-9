@@ -21,10 +21,10 @@ services:
 
   # Service: db (PostgreSQL)
   db:
-    image: postgres
+    image: postgres:15
     container_name: postgres_db
     environment:
-      POSTGRES_USER: edboi
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: fastapi_db
     ports:
@@ -44,7 +44,7 @@ services:
     image: dpage/pgadmin4  # Updated to a newer version
     container_name: pgadmin
     environment:
-      PGADMIN_DEFAULT_EMAIL: edboi@example.com
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
       PGADMIN_DEFAULT_PASSWORD: admin
     ports:
       - "5050:80"  # Ensure port 5050 is free or change if necessary
